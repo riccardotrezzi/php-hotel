@@ -54,19 +54,46 @@
 
     </head>
     <body>
-        <div>
-            <ul>
-                <?php 
-                    foreach ($hotels as $key => )
-                ?>
-                <li>
 
-                </li>
 
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Parking</th>
+                    <th scope="col">Vote</th>
+                    <th scope="col">Distance to center</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
                 <?php 
-                
+                    for($i = 0; $i < count($hotels); $i++){
+                        ?>
+                            <tr scope="row"></tr>
+                            <td><?php echo $hotels[$i]['name']?></td>
+                            <td><?php echo $hotels[$i]['description']?></td>
+                            <td>
+                                <?php 
+                                    if ($hotels[$i]['parking'] == true){
+                                        echo 'SI';
+                                    }
+                                    else{
+                                        echo 'NO';
+                                    }
+                                ?>
+                            </td>
+                            <td><?php echo $hotels[$i]['vote']?></td>
+                            <td><?php echo $hotels[$i]['distance_to_center']?></td>
+                        <?php 
+                    }
                 ?>
-            </ul>
+                </tr>
+            </tbody>
+        </table>
+        
+            
         </div>
     </body>
 </html>
